@@ -2,7 +2,7 @@
 
 # check magiskhide status
 check_magiskhide() {
-  if ! /sbin/magiskhide status; then
+  if ! magiskhide status; then
     echo "MagiskHide not found or disabled."
     echo "Do you want to try enabling MagiskHide?"
     select ysa in "Yes" "Skip MagiskHide" "Abort"; do
@@ -10,7 +10,7 @@ check_magiskhide() {
       "Yes")
         echo ""
         echo "Enabling MagiskHide..."
-        if /sbin/magiskhide enable; then
+        if magiskhide enable; then
           echo "Successfully enabled. Moving on..."
           sleep 1
         else
