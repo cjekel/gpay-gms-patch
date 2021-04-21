@@ -46,7 +46,7 @@ check_magiskhide() {
 hide_packages() {
   pkgs=(com.google.android.gms com.paypal.android.p2pmobile com.google.android.apps.walletnfcrel com.google.android.ext.services com.google.android.gsf)
   for i in "${pkgs[@]}"; do
-    /sbin/magiskhide add $i
+    magiskhide add $i
     echo "Hiding $i..."
   done
   echo ""
